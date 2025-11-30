@@ -1,0 +1,47 @@
+# .gitignore
+
+# ------------------------------------
+# 1. Dépendances Node.js
+# ------------------------------------
+# Le dossier où npm installe toutes les librairies
+/node_modules
+# Logs de debug npm (souvent générés en cas d'erreur)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------------------
+# 2. Fichiers de build ou temporaires
+# ------------------------------------
+# Fichiers compilés ou transpilés (si vous ajoutez du TypeScript ou Babel)
+/dist
+/build
+/tmp
+
+# ------------------------------------
+# 3. Environnement et Système
+# ------------------------------------
+# Fichiers d'environnement sensibles (NE JAMAIS COMMITER)
+.env
+.env.local
+.env.*.local
+
+# Fichiers VS Code
+.vscode/
+
+# IDE spécifiques (IntelliJ, WebStorm, etc.)
+.idea/
+
+# Fichiers macOS
+.DS_Store
+
+# Fichiers Windows
+Thumbs.db
+
+# ------------------------------------
+# 4. Fichiers Socket.IO/Redis spécifiques (pour le Bonus)
+# ------------------------------------
+# Si vous configurez Redis et avez des fichiers de configuration/dump locaux
+dump.rdb
+redis-server.log

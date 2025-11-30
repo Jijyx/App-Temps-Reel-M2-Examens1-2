@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabBoard - Éditeur Collaboratif</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+    
+    </head>
+<body>
+    <div id="login-container">
+        <form id="login-form">
+            <h2>Rejoindre CollabBoard</h2>
+            <p><input type="text" id="pseudo" placeholder="Votre Pseudo" required></p>
+            <p><input type="text" id="room" placeholder="Nom de la Room (ex: projetX)" required></p>
+            <p><button type="submit">Se Connecter</button></p>
+            <p id="error-message"></p>
+        </form>
+    </div>
+
+    <div id="app-container" class="hidden">
+        <aside id="sidebar">
+            <p>Latence estimée: <strong id="latency-display">N/A</strong></p>
+            <h3>Room : <span id="current-room"></span></h3>
+            <p>Connecté en tant que : <strong id="current-pseudo"></strong></p>
+            <button id="logout-button">Déconnexion</button> <hr>
+            <h4>Utilisateurs connectés :</h4>
+            <ul id="user-list">
+                </ul>
+            <hr>
+            <h4>Notifications :</h4>
+            <div id="notifications">
+                </div>
+        </aside>
+        
+        <main id="workspace">
+            <h1>Éditeur Collaboratif en temps réel</h1>
+            <textarea id="collaborative-editor" placeholder="Commencez à taper pour collaborer..." disabled></textarea>
+        </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

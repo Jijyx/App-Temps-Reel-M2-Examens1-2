@@ -1,0 +1,193 @@
+/* client/style.css */
+
+/* Variables CSS pour les couleurs */
+:root {
+    --dark-bg: #121212;         /* Noir très foncé pour le fond */
+    --card-bg: #1e1e1e;         /* Gris foncé pour les cartes et conteneurs */
+    --text-color: #f0f0f0;      /* Texte clair */
+    --accent-yellow: #FFC300;   /* Jaune principal */
+    --accent-red: #E74C3C;      /* Rouge pour les erreurs/départs */
+    --accent-blue: #3498DB;     /* Bleu pour les liens/infos */
+    --accent-purple: #9B59B6;   /* Violet pour les notifications */
+}
+
+/* Général et Corps */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background: var(--dark-bg);
+    color: var(--text-color);
+    transition: background 0.3s;
+}
+
+/* --------------------
+   CONNEXION (LOGIN)
+   -------------------- */
+#login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 18, 18, 0.95); /* Arrière-plan semi-transparent foncé */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#login-form {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    border: 1px solid var(--accent-yellow); /* Bordure jaune */
+}
+
+#login-form h2 {
+    color: var(--accent-yellow);
+    margin-top: 0;
+    text-align: center;
+}
+
+#login-form input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #333; /* Fond d'input légèrement plus clair */
+    color: var(--text-color);
+    border: 1px solid #555;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+#login-form input:focus {
+    border-color: var(--accent-blue);
+    outline: none;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: var(--accent-yellow);
+    color: var(--dark-bg); /* Texte foncé sur bouton jaune */
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+#login-form button:hover {
+    background: #FFD700;
+    transform: translateY(-1px);
+}
+
+#error-message {
+    color: var(--accent-red);
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* --------------------
+   APPLICATION PRINCIPALE
+   -------------------- */
+#app-container {
+    flex-grow: 1;
+    display: flex;
+}
+
+/* Barre Latérale (Sidebar) */
+#sidebar {
+    width: 300px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 20px;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+    border-right: 1px solid #333;
+}
+
+#sidebar h3, #sidebar h4 {
+    color: var(--accent-yellow);
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+#current-room {
+    color: var(--accent-blue);
+    font-weight: normal;
+}
+
+/* Liste des Utilisateurs */
+#user-list {
+    list-style: none;
+    padding: 0;
+}
+
+#user-list li {
+    background: #333;
+    margin: 5px 0;
+    padding: 8px;
+    border-left: 3px solid var(--accent-blue); /* Petite touche de bleu pour les utilisateurs */
+    border-radius: 4px;
+}
+
+/* Notifications */
+#notifications {
+    font-size: 0.85em;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#notifications p {
+    margin: 5px 0;
+    padding: 5px;
+    border-left: 3px solid var(--accent-purple); /* Touche de violet pour les notifications */
+    background: #333;
+    border-radius: 4px;
+}
+
+/* Espace de Travail (Workspace) */
+#workspace {
+    flex-grow: 1;
+    padding: 30px;
+    background: var(--dark-bg);
+}
+
+#workspace h1 {
+    color: var(--accent-yellow);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#collaborative-editor {
+    width: 100%;
+    height: 90%; /* Prend plus de hauteur */
+    padding: 15px;
+    border: 1px solid #555;
+    box-sizing: border-box;
+    resize: none;
+    font-size: 16px;
+    background: #252525; /* Fond sombre pour l'éditeur */
+    color: var(--text-color);
+    border-radius: 8px;
+    line-height: 1.6;
+    transition: border-color 0.2s;
+}
+
+#collaborative-editor:focus {
+    border-color: var(--accent-yellow);
+    outline: none;
+}
+
+.hidden {
+    display: none !important;
+}
